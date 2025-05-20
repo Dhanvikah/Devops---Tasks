@@ -1,0 +1,65 @@
+A new VPC with public subnets
+
+2 EC2 instances (Amazon Linux 2, t2.micro)
+
+An Application Load Balancer (ALB)
+
+ALB Target Group with health checks
+
+Listener forwarding HTTP to your EC2 targets
+
+Security Group allowing inbound HTTP (port 80)
+
+Apply complete! Resources: 16 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+alb_dns_name = "demo-alb-1639834042.us-east-1.elb.amazonaws.com"
+
+curl http://demo-alb-1639834042.us-east-1.elb.amazonaws.com
+output:
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : Web Server 2
+
+RawContent        : HTTP/1.1 200 OK
+                    Connection: keep-alive
+                    Upgrade: h2,h2c
+                    Accept-Ranges: bytes
+                    Content-Length: 13
+                    Content-Type: text/html; charset=UTF-8
+                    Date: Tue, 20 May 2025 07:56:42 GMT
+                    ETag: "d-6358c8d1f7d6c"...
+Forms             : {}
+Headers           : {[Connection, keep-alive], [Upgrade, h2,h2c], [Accept-Ranges, bytes], [Content-Length, 13]...}  
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 13
+
+another time - curl http://demo-alb-1639834042.us-east-1.elb.amazonaws.com
+
+output:
+StatusCode        : 200
+StatusDescription : OK
+Content           : Web Server 1
+
+RawContent        : HTTP/1.1 200 OK
+                    Connection: keep-alive
+                    Upgrade: h2,h2c
+                    Accept-Ranges: bytes
+                    Content-Length: 13
+                    Content-Type: text/html; charset=UTF-8
+                    Date: Tue, 20 May 2025 07:58:10 GMT
+                    ETag: "d-6358c8aae7a10"...
+Forms             : {}
+Headers           : {[Connection, keep-alive], [Upgrade, h2,h2c], [Accept-Ranges, bytes], [Content-Length, 13]...}  
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 13
+
+
