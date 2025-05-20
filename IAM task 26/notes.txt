@@ -1,0 +1,52 @@
+run : aws ec2 describe-instances --query "Reservations[*].Instances[*].IamInstanceProfile" --output json
+>>
+[
+    [],
+    [],
+    [],
+    [],
+    [
+        {
+            "Arn": "arn:aws:iam::545009870768:instance-profile/custom-ec2-profile",
+-- More  -- 
+
+
+
+
+
+
+aws iam get-role --role-name custom-ec2-role
+output: in json
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "custom-ec2-role",
+        "RoleId": "AROAX5ZI6U6YKJLZYASTE",
+        "Arn": "arn:aws:iam::545009870768:role/custom-ec2-role",
+        "CreateDate": "2025-05-20T08:20:34+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+-- More  --
+
+aws iam list-attached-role-policies --role-name custom-ec2-role
+{
+    "AttachedPolicies": [
+        {
+            "PolicyName": "AmazonS3ReadOnlyAccess",
+            "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+        }
+    ]
+}
+-- More  --
+
+aws iam get-instance-profile --instance-profile-name custom-ec2-profile
+{
+    "InstanceProfile": {
+        "Path": "/",
+        "InstanceProfileName": "custom-ec2-profile",
+        "InstanceProfileId": "AIPAX5ZI6U6YNE5453SK4",
+        "Arn": "arn:aws:iam::545009870768:instance-profile/custom-ec2-profile",
+        "CreateDate": "2025-05-20T08:20:36+00:00",
+        "Roles": [
+-- More  --
