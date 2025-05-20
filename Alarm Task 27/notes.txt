@@ -1,5 +1,0 @@
-You have chosen to subscribe to the topic:
-arn:aws:sns:us-east-1:545009870768:ec2-cpu-alert-topic
-
-To confirm this subscription, click or visit the link below (If this was in error no action is necessary):
-Confirm subscription
