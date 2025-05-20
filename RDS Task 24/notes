@@ -1,0 +1,14 @@
+1. created main.tf output.tf variables.tf terraform.tfstate
+2. check points ->choose ami as amazon linux 2. it is latest.
+                -> region are you creating this
+                ->keypair name/path is correct
+
+3. system manager>session manager>start session>choose intance then start
+    sudo yum update -y
+    sudo yum install -y mysql
+    mysql -h <RDS_endpoint> -P port# -u admin -p
+    mysql -h private-mysql-db.cvcy22awaz9q.us-east-2.rds.amazonaws.com -P 3306 -u admin -p
+
+    accessed rds from ec2 in private subnet
+
+
